@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Additional personal CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Juggling examples</title>
+</head>
+<body>
+    <!-- Load selfmade js scripts-->
+    <script src="Animations.js"></script>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header"><h3>Juggling animation</h3></div>
+                    <div class="fixed-pos-sticky"><a href="#"><img src="img/Stick-figure_transparent.png" alt="sticky figure"></a></div>
+                    <div class="balls fixed-pos-balls" id="red"><h2>R</h2></div>
+                    <div class="balls fixed-pos-balls" id="blue"><h2>G</h2></div>
+                    <div class="balls fixed-pos-balls" id="green"><h2>B</h2></div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"><h3>CSS</h3></div>
+                    <div class="card-body">
+                        <pre>
+                            <code contenteditable spellcheck="false">
+.balls {
+    border-radius: 50%;
+    position: fixed;  
+    width: 50px;
+    height: 50px;
+    top: 20%;
+    left: 52%;
+    animation-name: jump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#red {
+    background: red;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    animation-delay: 0s;
+}
+#blue {
+    background: blue;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    animation-delay: 0.66s;
+}
+#green {
+    background: green;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    animation-delay: 1.32s;
+}
+
+@keyframes jump {
+    50% {
+    top: 45%;
+    }
+}
+
+/* additional classes to fix juggling combo somewhere on page (sticky fig + balls)*/
+  .fixed-pos-sticky {
+    position: fixed !important; 
+    top: 40%;
+    left: 25%;
+  }
+
+  .fixed-pos-balls {
+    position: fixed !important;
+    top: 20% !important;
+    left: 25% !important;
+}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Javascript</h3></div>
+                    <div class="card-body">
+                        <pre>
+                            <code contenteditable spellcheck="false">
+function balls(){
+    document.getElementById("juggling").style.visibility="visible";
+}
+
+function noballs(){
+    document.getElementById("juggling").style.visibility="hidden";
+}
+                            </code>
+                        </pre>  
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Links</h3></div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="https://cubic-bezier.com/#.311,.441,.444,1.649">Cubic-Bezier function: for realistic ball movement.</a></li>
+                            <li><a href="https://codepen.io/ZachSaucier/pen/rmDdx">Heart beat animations using CSS or Javascript.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
