@@ -1,0 +1,128 @@
+/* Define variables in CSS */
+:root {
+  --rescol: rgba(240, 167, 49, 1.0);
+  --textcol: rgba(255,0,255,0.8);
+}
+/* debugging code */
+.debug{
+  border:1px solid red; 
+}
+/* General HTML tags */
+body {
+  background-image: url("img/Cloud_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    height auto; /* default */
+}
+
+/* Bootstrap CSS adjustments */
+.card { 
+    margin-top: 20px !important;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+
+.card-header {
+    background-color: var(--rescol);
+}
+
+.profielfoto {
+    border-radius: 50%;
+}
+
+#rescolor {
+  color: var(--textcol);
+}
+
+/* 
+Code formatting on page
+*/
+pre, code {
+  font-family: monospace, monospace;
+}
+pre {
+  overflow: auto;
+}
+pre > code {
+  display: block;
+  padding: 1rem;
+  word-wrap: normal;
+}
+
+/*
+Juggling balls animation using animation CSS styles
+*/
+.balls {
+    border-radius: 50%;
+    position: fixed;  
+    width: 50px;
+    height: 50px;
+    top: 20%;
+    left: 52%;
+    animation-name: jump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    text-align: center;
+    text-emphasis: bold;
+  }
+  #red {
+    background: red;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    animation-delay: 0s;
+  }
+  #blue {
+    background: blue;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    animation-delay: 0.66s;
+  }
+  #green {
+    background: green;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    animation-delay: 1.32s;
+  }
+
+  @keyframes jump {
+    50% {
+      top: 45%;
+    }
+  }
+
+  @keyframes rotate {
+    25% {
+        top: 35%;
+        left: 25%;
+      }
+    50% {
+        top: 60%;
+        left: 50%;
+    }
+    75% {
+        top: 35%;
+        left: 75%;
+      }
+  }
+
+  @keyframes rotate2 {
+    50% {
+        top: 60%;
+        left: 25%;
+    }
+  }
+
+  /* additional classes to fix juggling combo (sticky fig + balls)*/
+  .fixed-pos-sticky {
+    position: fixed !important; 
+    top: 40%;
+    left: 25%;
+  }
+
+  .fixed-pos-balls {
+    position: fixed !important;
+    top: 20% !important;
+    left: 25% !important;
+    mix-blend-mode: normal;
+  }
